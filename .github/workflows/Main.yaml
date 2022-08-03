@@ -7,29 +7,27 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [17.x]
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-    - name: Set up Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
-    - name: Install dependencies
-      working-directory: ./portfolio_website-STARTER
-      run: npm install
-    - name: Build
-      working-directory: ./portfolio_website-STARTER
-      run: CI='' npm run build -- --prod
-
+#  build:
+#    runs-on: ubuntu-latest
+#    strategy:
+#      matrix:
+#        node-version: [17.x]
+#    steps:
+#    - name: Checkout repository
+#      uses: actions/checkout@v2
+#    - name: Set up Node.js ${{ matrix.node-version }}
+#      uses: actions/setup-node@v1
+#      with:
+#        node-version: ${{ matrix.node-version }}
+#    - name: Install dependencies
+#      working-directory: ./portfolio_website-STARTER
+#      run: npm install
+#    - name: Build
+#      working-directory: ./portfolio_website-STARTER
+#      run: CI='' npm run build
   deployment:
     name: deployment
     runs-on: ubuntu-latest
-    needs: build
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
