@@ -8,7 +8,7 @@ export default function index(){
             <Section>
                 <SectionTitle>The Iron Bars</SectionTitle>
                 <SectionText>
-                    To be added...
+                    To be added... 
                 </SectionText>
             </Section>
         </Layout>
